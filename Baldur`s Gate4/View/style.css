@@ -1,0 +1,74 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(https://phonoteka.top/uploads/posts/2021-09/1631644452_36-phonoteka-org-p-fon-dlya-igri-vid-sverkhu-krasivo-40.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.map {
+    position: absolute;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    background: #80808050;
+    position: relative;
+}
+
+    .cell:hover {
+        background: #80808090;
+    }
+
+    .cell.maxpassable {
+        background: #00c6c650;
+    }
+
+        .cell.maxpassable:hover {
+            background: #00c6c680;
+        }
+
+
+    .cell.passable {
+        background: #00808050;
+    }
+
+        .cell.passable:hover {
+            background: #00808080;
+        }
+
+    .cell.path:before {
+        content: "";
+        position: absolute;
+        border: 5px solid #902d2d;
+        top: 40%;
+        left: 40%;
+        right: 40%;
+        bottom: 40%;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .cell.path:after {
+        content: "";
+        position: absolute;
+        border: 5px solid #902d2d;
+        top: 30%;
+        left: 30%;
+        right: 30%;
+        bottom: 30%;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+.entity {
+    position: absolute;
+}

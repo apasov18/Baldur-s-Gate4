@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="app">
+        <div class="map"
+             v-on:mousedown="MapDown"
+             v-on:mousemove="MapMove"
+             v-on:mouseup="MapUp"
+             v-bind:style="styleMap">
+
+            <div class="row" v-for="(row, rowIndex) in rows">
+                <div class="cell"
+                     v-for="(cell, columnIndex) in row"
+                     v-bind:style="styleCell"
+                     v-bind:class="MapClass(rowIndex, columnIndex)"
+                     v-on:mouseover="ShowPath(rowIndex, columnIndex)"
+                     v-on:click="Move(rowIndex, columnIndex)">
+                </div>
+            </div>
+
+            <img class="entity"
+                 v-for="entity in entities"
+                 v-bind:style="EntityStyle(entity)"
+                 src="image/per/user.png" />
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="a-star.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
