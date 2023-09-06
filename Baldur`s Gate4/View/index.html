@@ -19,16 +19,31 @@
                      v-for="(cell, columnIndex) in row"
                      v-bind:style="styleCell"
                      v-bind:class="MapClass(rowIndex, columnIndex)"
-                     v-on:mouseover="ShowPath(rowIndex, columnIndex)"
-                     v-on:click="Move(rowIndex, columnIndex)">
+                     v-on:mouseover="ShowPath(rowIndex, columnIndex,'person')"
+                     v-on:click="PersonMove(rowIndex, columnIndex,'person')">
                 </div>
             </div>
 
             <img class="entity"
                  v-for="entity in entities"
                  v-bind:style="EntityStyle(entity)"
-                 src="image/per/user.png" />
+                 v-bind:src="entity.src" />
 
+        </div>
+        <div class="game-panel">
+            <div class="person-portret">
+                <svg class="portret-area">
+                    <clipPath id="healthClip">
+                        <rect y="10" v-bind:x="health" width="160" height="160"></rect>
+                    </clipPath>
+                    <image class="portret" x="5" y="-155" height="150" width="150" xlink:href="image/per/avatar.png"> </image>
+                    <circle cx=" 80" cy=" 80" r=" 70" class="manna" v-bind:style="{'stroke-dashoffset': manna}">  </circle>
+                    <circle class="life" clip-path="url(#healthClip)" cx="80" cy="80" r="65"> </circle>
+
+
+
+                </svg>
+            </div>
         </div>
     </div>
 

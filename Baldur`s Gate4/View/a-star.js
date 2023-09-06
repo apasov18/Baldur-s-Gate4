@@ -80,7 +80,7 @@ var aStar = function(grid, start, goal) {
 
     let newPath = [];
     path.forEach(p => {
-        newPath.push({ x: p[0], y: p[1] });
+        newPath.push({ x: p[1], y: p[0] });
     })
 
     return newPath;

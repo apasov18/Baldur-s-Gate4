@@ -20,6 +20,9 @@
     <None Update="View\image\map.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="View\image\per\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="View\image\per\user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
