@@ -76,6 +76,7 @@ body {
 
 .game-panel {
     position: fixed;
+    display:flex;
     bottom: 0;
     left: 50%;
     margin-left: -350px;
@@ -112,3 +113,42 @@ body {
     fill:#902d2d;
     opacity: 0.4;
 }
+
+
+.game-spell {
+    background: #45372d;
+    border: 1px solid #96959590;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.game-action {
+    background: #45372d;
+    border: 1px solid #96959590;
+    margin: auto;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.spell {
+    background: #80808055;
+    border: 1px solid #96959590;
+    width: 40px;
+    height: 40px;
+}
+
+    .spell img {
+        width: 100%;
+        filter: grayscale(0.5);
+    }
+
+    .spell:hover {
+        background: #80808032;
+    }
+
+        .spell:hover img {
+            width: 100%;
+            filter: grayscale(0);
+        }

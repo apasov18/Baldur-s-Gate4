@@ -14,13 +14,13 @@
              v-on:mouseup="MapUp"
              v-bind:style="styleMap">
 
-            <div class="row" v-for="(row, rowIndex) in rows">
+            <div class="row" v-if ="showMapCells" v-for="(row, rowIndex) in rows">
                 <div class="cell"
                      v-for="(cell, columnIndex) in row"
                      v-bind:style="styleCell"
                      v-bind:class="MapClass(rowIndex, columnIndex)"
-                     v-on:mouseover="ShowPath(rowIndex, columnIndex,'person')"
-                     v-on:click="PersonMove(rowIndex, columnIndex,'person')">
+                     v-on:click="HeroMove(rowIndex, columnIndex)"
+                     v-on:mouseover="HeroHover(rowIndex, columnIndex)">
                 </div>
             </div>
 
@@ -39,11 +39,22 @@
                     <image class="portret" x="5" y="-155" height="150" width="150" xlink:href="image/per/avatar.png"> </image>
                     <circle cx=" 80" cy=" 80" r=" 70" class="manna" v-bind:style="{'stroke-dashoffset': manna}">  </circle>
                     <circle class="life" clip-path="url(#healthClip)" cx="80" cy="80" r="65"> </circle>
-
-
-
                 </svg>
             </div>
+
+            <div class="game-spell">
+                <div v-for="spell in spells" class="spell">
+                    <img src="image/tools/move.png" />
+                </div>
+            </div>
+
+            <div class="game-action">
+                <div v-for="spell in action" class="spell">
+                    <img v-bind:src="spell.src"
+                         v-on:click="InterfaceClick(spell.method)" />
+                </div>
+            </div>
+
         </div>
     </div>
 
